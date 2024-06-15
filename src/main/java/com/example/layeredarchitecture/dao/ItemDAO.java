@@ -22,4 +22,5 @@ public interface ItemDAO {
 
     ItemDTO searachItem(String newItemCode) throws SQLException, ClassNotFoundException;
 
+    int update(ItemDTO item) throws SQLException, ClassNotFoundException;
 }
