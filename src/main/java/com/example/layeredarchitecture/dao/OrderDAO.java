@@ -1,6 +1,7 @@
 package com.example.layeredarchitecture.dao;
 
 import com.example.layeredarchitecture.db.DBConnection;
+import com.example.layeredarchitecture.model.OrderDTO;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -11,5 +12,5 @@ public interface OrderDAO {
 
     boolean existOrder(String orderId) throws SQLException, ClassNotFoundException ;
 
-    int saveOrder(String orderId, LocalDate orderDate, String customerId) throws SQLException, ClassNotFoundException ;
+    boolean saveOrder(OrderDTO orderDTO) throws SQLException,ClassNotFoundException;
 }
