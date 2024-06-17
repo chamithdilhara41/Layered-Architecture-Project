@@ -7,13 +7,13 @@ import java.util.ArrayList;
 
 public interface CustomerDAO {
 
-     void saveCustomer(CustomerDTO customerDTO) throws SQLException, ClassNotFoundException ;
+     boolean saveCustomer(CustomerDTO customerDTO) throws SQLException, ClassNotFoundException ;
 
-     void updateCustomer(CustomerDTO customerDTO) throws SQLException, ClassNotFoundException ;
+     boolean updateCustomer(CustomerDTO customerDTO) throws SQLException, ClassNotFoundException ;
 
      ArrayList<CustomerDTO> getAllCustomers() throws SQLException, ClassNotFoundException;
 
-     void deleteCustomer(String id) throws SQLException, ClassNotFoundException ;
+     boolean deleteCustomer(String id) throws SQLException, ClassNotFoundException ;
 
      boolean existCustomer(String id) throws SQLException, ClassNotFoundException ;
 
