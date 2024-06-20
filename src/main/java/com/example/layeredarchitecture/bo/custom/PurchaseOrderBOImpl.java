@@ -23,42 +23,37 @@ import java.util.List;
 
 public class PurchaseOrderBOImpl implements PurchaseOrderBO {
 
-    CustomerDAO customerDAO = new CustomerDAOImpl();
-    ItemDAO itemDAO = new ItemDAOImpl();
-    OrderDAO orderDAO = new OrderDAOImpl();
-    PurchaseOrderBOImpl placeOrderBO = new PurchaseOrderBOImpl();
-
     public CustomerDTO searchCustomer(String id) throws SQLException, ClassNotFoundException {
-        //CustomerDAO customerDAO = new CustomerDAOImpl();
+        CustomerDAO customerDAO = new CustomerDAOImpl();
         return customerDAO.search(id);
     }
 
     public ItemDTO searchItem(String code) throws SQLException, ClassNotFoundException {
-        //ItemDAO itemDAO = new ItemDAOImpl();
+        ItemDAO itemDAO = new ItemDAOImpl();
         return itemDAO.search(code);
     }
     public boolean existItem(String code) throws SQLException, ClassNotFoundException {
-        //ItemDAO itemDAO = new ItemDAOImpl();
+        ItemDAO itemDAO = new ItemDAOImpl();
         return itemDAO.exist(code);
     }
 
     public boolean existCustomer(String id) throws SQLException, ClassNotFoundException {
-        //CustomerDAO customerDAO = new CustomerDAOImpl();
+        CustomerDAO customerDAO = new CustomerDAOImpl();
         return customerDAO.exist(id);
     }
 
     public String generateOrderID() throws SQLException, ClassNotFoundException {
-        //OrderDAO orderDAO = new OrderDAOImpl();
+        OrderDAO orderDAO = new OrderDAOImpl();
         return orderDAO.genarateID();
     }
 
     public ArrayList<CustomerDTO> getAllCustomer() throws SQLException, ClassNotFoundException {
-        //CustomerDAO customerDAO = new CustomerDAOImpl();
+        CustomerDAO customerDAO = new CustomerDAOImpl();
         return customerDAO.getAll();
     }
 
     public ArrayList<ItemDTO> getAllItem() throws SQLException, ClassNotFoundException {
-        //ItemDAO itemDAO = new ItemDAOImpl();
+        ItemDAO itemDAO = new ItemDAOImpl();
         return itemDAO.getAll();
     }
 
@@ -123,7 +118,7 @@ public class PurchaseOrderBOImpl implements PurchaseOrderBO {
 
     public ItemDTO findItem(String code) {
         try {
-            //PurchaseOrderBOImpl placeOrderBO = new PurchaseOrderBOImpl();
+            PurchaseOrderBOImpl placeOrderBO = new PurchaseOrderBOImpl();
             return placeOrderBO.searchItem(code);
         } catch (SQLException e) {
             throw new RuntimeException("Failed to find the Item " + code, e);
